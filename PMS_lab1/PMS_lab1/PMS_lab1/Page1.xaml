@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PMS_lab1.Page1"
+             Title= "First tab">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Font = "20"
+                Text=" Лихацька Юлія &#10; ІВ-82 &#10; ЗК ІВ-8216 "
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
