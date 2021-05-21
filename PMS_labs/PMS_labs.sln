@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMS_lab1.Android", "PMS_lab1\PMS_lab1.Android\PMS_lab1.Android.csproj", "{988B58B1-D7BC-407C-A055-950D7A41B17D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMS_labs.Android", "PMS_labs\PMS_labs.Android\PMS_labs.Android.csproj", "{988B58B1-D7BC-407C-A055-950D7A41B17D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMS_lab1", "PMS_lab1\PMS_lab1\PMS_lab1.csproj", "{4FE99D6C-F49A-41C3-B63C-A9A8DCC10D82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMS_labs", "PMS_labs\PMS_labs\PMS_labs.csproj", "{4FE99D6C-F49A-41C3-B63C-A9A8DCC10D82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

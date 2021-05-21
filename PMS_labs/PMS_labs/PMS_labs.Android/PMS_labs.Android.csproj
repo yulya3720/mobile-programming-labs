@@ -99,6 +99,10 @@
       <Project>{819BB1D4-4BE4-47A4-9AAF-041BCD6223B4}</Project>
       <Name>PMS_lab1</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PMS_labs\PMS_labs.csproj">
+      <Project>{4fe99d6c-f49a-41c3-b63c-a9a8dcc10d82}</Project>
+      <Name>PMS_labs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
