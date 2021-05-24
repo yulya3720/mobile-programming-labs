@@ -14,7 +14,8 @@ namespace PMS_labs
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new TabbedPage1();
+            //MainPage = new TabbedPage1();
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PMS_labs.AddMoviePage">
+    <ContentPage.Content>
+        <ScrollView Margin="10,10">
+            <StackLayout>
+                <Label Text="Title" FontSize="20"/>
+                <Entry x:Name="titleEntry"/>
+
+                <Label Text="Year" FontSize="20"/>
+                <Entry x:Name="yearEntry"/>
+
+                <Label Text="imdbID" FontSize="20"/>
+                <Entry x:Name="imdbidEntry"/>
+
+                <Label Text="Type" FontSize="20"/>
+                <Entry x:Name="typeEntry"/>
+
+                <Button Text="Submit" Clicked="OnSubmit"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

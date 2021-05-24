@@ -3,15 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PMS_labs.Views"
              x:Class="PMS_labs.Page3"
-             Title="Movies"
-             >
+             Title="Movies">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icon_plus.png" Order="Primary"  Clicked="OnAddItem"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
-        <ListView x:Name="moviesView" HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <local:MovieCell Title="{Binding Title}" Year="{Binding Year}" imdbID="{Binding imdbID}" Type="{Binding Type}" Poster="{Binding Poster}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackLayout>
+            <SearchBar x:Name="moviesSearch" TextChanged="OnTextChanged"/>
+            <ListView x:Name="moviesView" HasUnevenRows="True" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:MovieCell Title="{Binding Title}" Year="{Binding Year}" imdbID="{Binding imdbID}" Type="{Binding Type}" Poster="{Binding Poster}">
+                            <local:MovieCell.ContextActions>
+                                <MenuItem IconImageSource="icon_delete.png" Clicked="OnDelete" CommandParameter="{Binding .}"/>
+                            </local:MovieCell.ContextActions>
+                        </local:MovieCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout x:Name="movieEmpty" IsVisible="False">
+                <Label Text="No items found"/>
+            </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

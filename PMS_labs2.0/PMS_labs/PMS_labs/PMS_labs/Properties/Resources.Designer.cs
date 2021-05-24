@@ -149,5 +149,105 @@ namespace PMS_labs.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tt0076759 {
+            get {
+                object obj = ResourceManager.GetObject("tt0076759", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tt0080684 {
+            get {
+                object obj = ResourceManager.GetObject("tt0080684", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tt0086190 {
+            get {
+                object obj = ResourceManager.GetObject("tt0086190", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tt0120915 {
+            get {
+                object obj = ResourceManager.GetObject("tt0120915", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tt0121765 {
+            get {
+                object obj = ResourceManager.GetObject("tt0121765", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tt0121766 {
+            get {
+                object obj = ResourceManager.GetObject("tt0121766", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tt0796366 {
+            get {
+                object obj = ResourceManager.GetObject("tt0796366", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tt2488496 {
+            get {
+                object obj = ResourceManager.GetObject("tt2488496", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tt2527336 {
+            get {
+                object obj = ResourceManager.GetObject("tt2527336", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tt3748528 {
+            get {
+                object obj = ResourceManager.GetObject("tt3748528", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

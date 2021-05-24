@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <PackageId>ua.kpi.comsys.IV8216</PackageId>
   </PropertyGroup>
@@ -20,6 +20,26 @@
     <None Remove="Data\Posters\Poster_07.jpg" />
     <None Remove="Data\Posters\Poster_08.jpg" />
     <None Remove="Data\Posters\Poster_10.jpg" />
+    <None Remove="Data\tt0076759.json" />
+    <None Remove="Data\tt0076759.txt" />
+    <None Remove="Data\tt0080684.json" />
+    <None Remove="Data\tt0080684.txt" />
+    <None Remove="Data\tt0086190.json" />
+    <None Remove="Data\tt0086190.txt" />
+    <None Remove="Data\tt0120915.json" />
+    <None Remove="Data\tt0120915.txt" />
+    <None Remove="Data\tt0121765.json" />
+    <None Remove="Data\tt0121765.txt" />
+    <None Remove="Data\tt0121766.json" />
+    <None Remove="Data\tt0121766.txt" />
+    <None Remove="Data\tt0796366.json" />
+    <None Remove="Data\tt0796366.txt" />
+    <None Remove="Data\tt2488496.json" />
+    <None Remove="Data\tt2488496.txt" />
+    <None Remove="Data\tt2527336.json" />
+    <None Remove="Data\tt2527336.txt" />
+    <None Remove="Data\tt3748528.json" />
+    <None Remove="Data\tt3748528.txt" />
     <None Remove="Properties\MoviesList.json" />
   </ItemGroup>
 
@@ -32,6 +52,16 @@
     <EmbeddedResource Include="Data\Posters\Poster_07.jpg" />
     <EmbeddedResource Include="Data\Posters\Poster_08.jpg" />
     <EmbeddedResource Include="Data\Posters\Poster_10.jpg" />
+    <EmbeddedResource Include="Data\tt0076759.json" />
+    <EmbeddedResource Include="Data\tt0080684.json" />
+    <EmbeddedResource Include="Data\tt0086190.json" />
+    <EmbeddedResource Include="Data\tt0120915.json" />
+    <EmbeddedResource Include="Data\tt0121765.json" />
+    <EmbeddedResource Include="Data\tt0121766.json" />
+    <EmbeddedResource Include="Data\tt0796366.json" />
+    <EmbeddedResource Include="Data\tt2488496.json" />
+    <EmbeddedResource Include="Data\tt2527336.json" />
+    <EmbeddedResource Include="Data\tt3748528.json" />
     <EmbeddedResource Include="Properties\MoviesList.json" />
   </ItemGroup>
 
@@ -45,6 +75,7 @@
   <ItemGroup>
     <Resource Include="Data\ChartData.cs" />
     <Resource Include="Data\MoviesList.json" />
+    <Resource Include="Data\tt0121766.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,6 +87,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="AddMoviePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MovieInfoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Page1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

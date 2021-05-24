@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PMS_labs.MovieInfoPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10">
+            <StackLayout>
+                <Label x:Name="movieTitle" FontSize="22" TextColor="Black"/>
+                <Label x:Name="movieDirector" FontSize="16" TextColor="#666"/>
+                <Label x:Name="movieYear" FontSize="12"/>
+                <Label x:Name="movieGenre" FontSize="12"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image x:Name="moviePoster"/>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label x:Name="movieReleased"/>
+                    <Label x:Name="movieRuntime"/>
+                    <Label x:Name="movieActors"/>
+                    <Label x:Name="movieLanguage"/>
+                    <Label x:Name="movieCountry"/>
+                    <Label x:Name="movieProduction"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="EndAndExpand">
+                    <Label x:Name="movieType" HorizontalTextAlignment="End" LineBreakMode="NoWrap"/>
+                    <Label x:Name="movieRated" HorizontalTextAlignment="End" LineBreakMode="NoWrap"/>
+                    <Label x:Name="movieimdbRating" HorizontalTextAlignment="End" LineBreakMode="NoWrap"/>
+                    <Label x:Name="movieimdbVotes" HorizontalTextAlignment="End" LineBreakMode="NoWrap"/>
+                    <Label x:Name="movieimdbID" HorizontalTextAlignment="End" LineBreakMode="NoWrap"/>
+                </StackLayout>
+            </StackLayout>
+            <Label x:Name="movieAwards"/>
+            <Label x:Name="movieWriter"/>
+            <Label x:Name="moviePlot"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

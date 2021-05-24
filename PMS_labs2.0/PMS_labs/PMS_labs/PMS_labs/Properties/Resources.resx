@@ -145,4 +145,34 @@
   <data name="Poster_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Posters\Poster_10.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="tt0076759" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\tt0076759.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tt0080684" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\tt0080684.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tt0086190" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\tt0086190.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tt0120915" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\tt0120915.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tt0121765" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\tt0121765.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tt0121766" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\tt0121766.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tt0796366" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\tt0796366.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tt2488496" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\tt2488496.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tt2527336" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\tt2527336.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tt3748528" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\tt3748528.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
