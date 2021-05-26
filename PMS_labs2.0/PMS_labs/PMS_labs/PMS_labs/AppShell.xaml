@@ -33,6 +33,7 @@
         <ShellContent Title="About" Icon="icon_about.png" Route="Page1" ContentTemplate="{DataTemplate local:Page1}" />
         <ShellContent Title="Chart" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:Page2}" />
         <ShellContent Title="List" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:Page3}" />
+        <ShellContent Title="Gallery" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:Page4}" />
     </TabBar>
 
     <!--

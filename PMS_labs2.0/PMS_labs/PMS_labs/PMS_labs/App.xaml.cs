@@ -3,6 +3,8 @@ using PMS_labs.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SQLite;
+using System.Threading.Tasks;
 
 namespace PMS_labs
 {
@@ -20,6 +22,7 @@ namespace PMS_labs
 
         protected override void OnStart()
         {
+
         }
 
         protected override void OnSleep()
