@@ -63,7 +63,7 @@ namespace PMS_labs.Views
                 yearLabel.Text = Year;
                 imdbidLabel.Text = imdbID;
                 typeLabel.Text = Type;
-                poster.Source = ImageSource.FromResource("PMS_labs.Data.Posters." + Poster, typeof(MovieCell).GetTypeInfo().Assembly);
+                poster.Source = ImageSource.FromUri(new Uri(Poster));
             }
         }
 

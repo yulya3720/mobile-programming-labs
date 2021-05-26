@@ -19,21 +19,42 @@ namespace PMS_labs
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page4 : ContentPage
     {
-           
-            public Page4()
+        private const string _requestUrl = "https://pixabay.com/api/?key={0}&q={1}&image_type=photo&per_page={2}";
+        private const string _apiKey = "19193969-87191e5db266905fe8936d565";
+        private const string _request = "small+animals";
+        private const int _count = 18;
+
+        private HttpClient _client;
+        public Page4()
+        {
+            InitializeComponent();
+            _client = new HttpClient();
+        }
+         protected override async void OnAppearing()
+         {
+            base.OnAppearing();
+
+            base.OnAppearing();
+
+            var response = await _client.GetAsync(string.Format(_requestUrl, _apiKey, _request, _count));
+
+            if (!response.IsSuccessStatusCode)
             {
-                InitializeComponent();
+                await DisplayAlert("Error", "Error", "Ok");
+                return;
             }
-             protected override async void OnAppearing()
-             {
-                base.OnAppearing();
 
-                for(int i = 1; i <= 6; i++)
-                {
-                    galleryLayout.Add(ImageSource.FromResource($"PMS_labs.Data.Gallery.{i}.PNG", typeof(Page4).GetTypeInfo().Assembly));
-                }
+            using var data = await response.Content.ReadAsStreamAsync();
+            using var streamReader = new StreamReader(data);
+            using var reader = new JsonTextReader(streamReader);
 
-             }
+            var a = await JObject.LoadAsync(reader);
+
+            foreach (var u in a["hits"].Select(v => v["webformatURL"]))
+            {
+                galleryLayout.Add(ImageSource.FromUri(new Uri((string)u)));
+            }
+         }
 
             private async void OnAddItem(object sender, EventArgs e)
             {

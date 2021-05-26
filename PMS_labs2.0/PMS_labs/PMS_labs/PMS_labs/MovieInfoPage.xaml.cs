@@ -41,7 +41,7 @@ namespace PMS_labs
             movieimdbVotes.Text = info.imdbVotes;
             movieimdbID.Text = info.imdbID;
             moviePlot.Text = info.Plot;
-            moviePoster.Source = ImageSource.FromResource("PMS_labs.Data.Posters." + info.Poster, typeof(MovieInfoPage).GetTypeInfo().Assembly);
+            moviePoster.Source = ImageSource.FromUri(new Uri(info.Poster));
         }
     }
 }

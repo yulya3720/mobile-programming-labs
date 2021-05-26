@@ -23,9 +23,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <StackLayout x:Name="movieEmpty" IsVisible="False">
-                <Label Text="No items found"/>
-            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
