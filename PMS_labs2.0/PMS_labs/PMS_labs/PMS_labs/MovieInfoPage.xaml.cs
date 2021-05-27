@@ -41,7 +41,11 @@ namespace PMS_labs
             movieimdbVotes.Text = info.imdbVotes;
             movieimdbID.Text = info.imdbID;
             moviePlot.Text = info.Plot;
-            moviePoster.Source = ImageSource.FromUri(new Uri(info.Poster));
+            moviePoster.Source = new UriImageSource
+            {
+                CachingEnabled = true,
+                Uri = new Uri(info.Poster)
+            };
         }
     }
 }

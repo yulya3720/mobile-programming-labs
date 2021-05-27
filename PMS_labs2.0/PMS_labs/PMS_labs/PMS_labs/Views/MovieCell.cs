@@ -50,7 +50,7 @@ namespace PMS_labs.Views
         public string Poster
         {
             get => (string)GetValue(PosterProperty);
-            set => SetValue(PosterProperty, value == "" ? null : value);
+            set => SetValue(PosterProperty, value);
         }
 
         protected override void OnBindingContextChanged()
@@ -63,7 +63,11 @@ namespace PMS_labs.Views
                 yearLabel.Text = Year;
                 imdbidLabel.Text = imdbID;
                 typeLabel.Text = Type;
-                poster.Source = ImageSource.FromUri(new Uri(Poster));
+                poster.Source = new UriImageSource
+                {
+                    CachingEnabled = true,
+                    Uri = new Uri(Poster)
+                };
             }
         }
 

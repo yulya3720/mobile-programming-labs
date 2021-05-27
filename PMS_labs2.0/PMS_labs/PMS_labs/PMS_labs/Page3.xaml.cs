@@ -35,25 +35,6 @@ namespace PMS_labs
 
             moviesView.ItemsSource = display;
 
-           /* var assembly = IntrospectionExtensions.GetTypeInfo(typeof(Properties.Resources)).Assembly;
-            var c = (CultureInfo)CultureInfo.CurrentCulture.Clone();
-            c.NumberFormat.CurrencySymbol = "$";
-            CultureInfo.CurrentCulture = c;
-
-            using (var stream = assembly.GetManifestResourceStream("PMS_labs.Properties.MoviesList.json"))
-            using (var streamReader = new StreamReader(stream))
-            using (var reader = new JsonTextReader(streamReader))
-            {
-                var a = JObject.Load(reader);
-                a["Search"].Select(v => new Movie
-                {
-                    Title = (string)v["Title"],
-                    Year = (string)v["Year"],
-                    imdbID = (string)v["imdbID"],
-                    Type = (string)v["Type"],
-                    Poster = (string)v["Poster"]
-                }).OrderBy(x => x.Title).ToList().ForEach(AddMovie);
-            }*/
         }
 
         private void AddMovie(Movie movie)
@@ -69,18 +50,7 @@ namespace PMS_labs
         protected override void OnAppearing()
         {
             base.OnAppearing();
-/*
-            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(Properties.Resources)).Assembly;
 
-            using (var stream = assembly.GetManifestResourceStream("PMS_labs.Properties.MoviesList.json"))
-            using (var reader = new StreamReader(stream))
-            {
-                var str = reader.ReadToEnd();
-                JObject a = JObject.Parse(str);
-                movies = a["Search"].Select(v => new Movie { Title = (string)v["Title"], Year = (string)v["Year"], imdbID = (string)v["imdbID"], Type = (string)v["Type"], Poster = (string)v["Poster"] }).ToList();
-            }
-
-            moviesView.ItemsSource = movies;*/
         }
 
         private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -88,6 +58,8 @@ namespace PMS_labs
             var lv = (ListView)sender;
             var movie = (Movie)lv.SelectedItem;
 
+            MovieInfo info = null;
+            string id = movie.imdbID;
             try
             {
                 var response = await _client.GetAsync(string.Format(_detailsUrl, API_KEY, movie.imdbID));
@@ -102,7 +74,7 @@ namespace PMS_labs
                 
                     var Info = new MovieInfo
                     {
-                        Actors = ((string)a["Actors"]).Split(',').Select(x => x.Trim()).ToArray(),
+                        Actors = (string)a["Actors"],
                         Rated = (string)a["Rated"],
                         Poster = (string)a["Poster"],
                         Released = (string)a["Released"],                        
@@ -122,15 +94,21 @@ namespace PMS_labs
                         Production = (string)a["Production"],
                         Year = int.Parse((string)a["Year"])
                     };
-                
 
-                await Navigation.PushAsync(new MovieInfoPage(Info));
+
+                await App.Db.InsertDetailsAsync(info);
                 //Shell.Current.GoToAsync("MovieInfoPage");
             }
-            catch (HttpRequestException)
+            catch 
+            {
+                info = await App.Db.GetDetailsByIdAsync(id);
+            }
+            if (info is null)
             {
                 await DisplayAlert("Error", $"Details for movie {movie.imdbID} not found", "OK");
+                return;
             }
+            await Navigation.PushAsync(new MovieInfoPage(info));
         }
         private async void OnTextChanged(object sender, EventArgs e)
         {
@@ -141,31 +119,52 @@ namespace PMS_labs
 
             var text = search.Replace(' ', '+');
 
-            var response = await _client.GetAsync(string.Format(_searchUrl, API_KEY, text));
-
-            if (!response.IsSuccessStatusCode)
+            //   var response = await _client.GetAsync(string.Format(_searchUrl, API_KEY, text));
+            IEnumerable<Movie> movies = new List<Movie>();
+            try
             {
-                await DisplayAlert("Error", "Error", "Ok");
-                return;
+                var response = await _client.GetAsync(string.Format(_searchUrl, API_KEY, text));
+                if (!response.IsSuccessStatusCode)
+                {
+                    await DisplayAlert("Error", "Error", "Ok");
+                    return;
+                }
+
+                using var data = await response.Content.ReadAsStreamAsync();
+                using var streamReader = new StreamReader(data);
+                using var reader = new JsonTextReader(streamReader);
+
+                var a = await JObject.LoadAsync(reader);
+
+                var t = a["Search"].Select(v => new Movie
+                {
+                    Title = (string)v["Title"],
+                    Year = (string)v["Year"],
+                    imdbID = (string)v["imdbID"],
+                    Type = (string)v["Type"],
+                    Poster = (string)v["Poster"]
+                });
+            }
+            catch
+            {
+                movies = await App.Db.GetMoviesBySearchStringAsync(text);
             }
 
-            using var data = await response.Content.ReadAsStreamAsync();
-            using var streamReader = new StreamReader(data);
-            using var reader = new JsonTextReader(streamReader);
-
-            var a = await JObject.LoadAsync(reader);
-
-            var t = a["Search"].Select(v => new Movie
+            if (movies.Count() == 0)
             {
-                Title = (string)v["Title"],
-                Year = (string)v["Year"],
-                imdbID = (string)v["imdbID"],
-                Type = (string)v["Type"],
-                Poster = (string)v["Poster"]
-            });
-            foreach (var b in t)
+                moviesView.IsVisible = false;
+                notFound.IsVisible = true;
+            }
+            else
             {
-                AddMovie(b);
+                moviesView.IsVisible = true;
+                notFound.IsVisible = false;
+
+                foreach (var m in movies)
+                {
+                    await App.Db.InsertMovieAsync(m);
+                    AddMovie(m);
+                }
             }
         }
         private void OnDelete(object sender, EventArgs e)

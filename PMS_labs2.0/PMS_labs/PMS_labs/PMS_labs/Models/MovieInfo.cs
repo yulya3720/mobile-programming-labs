@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SQLite;
 
 namespace PMS_labs.Models
 {
     public class MovieInfo
     {
+        [PrimaryKey]
+        public string imdbID { get; set; }
         public string Title { get; set; }
         public int Year { get; set; }
         public string Rated { get; set; }
@@ -14,7 +17,7 @@ namespace PMS_labs.Models
         public string Genre { get; set; }
         public string Director { get; set; }
         public string Writer { get; set; }
-        public string[] Actors { get; set; }
+        public string Actors { get; set; }
         public string Plot { get; set; }
         public string Language { get; set; }
         public string Country { get; set; }
@@ -22,7 +25,6 @@ namespace PMS_labs.Models
         public string Poster { get; set; }
         public string imdbRating { get; set; }
         public string imdbVotes { get; set; }
-        public string imdbID { get; set; }
         public string Type { get; set; }
         public string Production { get; set; }
 

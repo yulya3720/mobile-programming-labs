@@ -11,8 +11,8 @@ namespace PMS_labs
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+          //  Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
+           // Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
         }
 
     }
